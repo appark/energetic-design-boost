@@ -245,7 +245,6 @@ function Index() {
                   alt={`Portrait of ${member.name}`}
                   width={512}
                   height={512}
-                  loading="lazy"
                   className="h-64 w-full object-cover object-top grayscale transition-all duration-500 group-hover:grayscale-0 md:h-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/60 to-transparent md:bg-gradient-to-r" />
