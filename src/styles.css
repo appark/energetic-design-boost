@@ -4,6 +4,34 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-brand-crimson: #a4232c;
+  --color-brand-charcoal: #121212;
+  --color-brand-offwhite: #f9f8f6;
+  --color-brand-accent: #ff3e3e;
+
+  --font-display: "Anton", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-reveal {
+  animation: reveal-up 0.8s var(--ease-out-expo) both;
+}
+
 /*
  * Design system definition.
  *
