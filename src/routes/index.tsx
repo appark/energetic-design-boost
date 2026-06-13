@@ -233,43 +233,45 @@ function Index() {
           </div>
         </div>
 
-        <div className="grid gap-px bg-white/10">
+        <div className="grid gap-8 md:grid-cols-2">
           {staff.map((member) => (
             <div
               key={member.name}
-              className="group grid bg-brand-charcoal py-12 transition-colors hover:bg-brand-crimson/10 lg:grid-cols-3"
+              className="group flex flex-col overflow-hidden bg-white/[0.03] ring-1 ring-white/10 transition-colors hover:bg-white/[0.06]"
             >
-              <div className="flex min-w-0 items-center gap-6 px-4">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={member.photo}
                   alt={`Portrait of ${member.name}`}
                   width={512}
                   height={512}
-                  loading="lazy"
-                  className="size-24 shrink-0 rounded-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover object-top grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                 />
-                <div className="min-w-0">
-                  <div className="font-display text-2xl uppercase tracking-tight">{member.name}</div>
-                  <div className="font-mono text-[10px] uppercase text-brand-accent">
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-brand-charcoal/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-brand-accent">
                     {member.role}
                   </div>
+                  <h3 className="mt-1 font-display text-4xl uppercase leading-none tracking-tight text-white">
+                    {member.name}
+                  </h3>
                 </div>
               </div>
-              <div className="flex items-center px-4 py-8 lg:py-0">
-                <p className="text-sm text-white/60">{member.bio}</p>
-              </div>
-              <div className="flex items-center px-4 lg:justify-end">
+              <div className="flex flex-1 flex-col p-6">
+                <p className="flex-1 text-sm leading-relaxed text-white/60">{member.bio}</p>
                 <a
                   href={`mailto:${member.email}`}
-                  className="border-b border-brand-accent font-mono text-xs uppercase tracking-widest"
+                  className="mt-6 inline-flex w-fit items-center gap-2 border-b border-brand-accent pb-0.5 font-mono text-xs uppercase tracking-widest transition-colors hover:text-brand-accent"
                 >
-                  Contact {member.role.includes("Coach") ? "Coach" : "GM"}
+                  {member.email} →
                 </a>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+
 
       {/* Footer */}
       <footer className="border-t border-brand-charcoal/5 px-6 py-12 lg:px-12">
