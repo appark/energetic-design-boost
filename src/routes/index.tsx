@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import heroHuddle from "@/assets/hero-huddle.jpg";
 import staffGm from "@/assets/staff-gm.jpg";
 import staffCoach from "@/assets/staff-coach.jpg";
@@ -74,6 +74,7 @@ function Index() {
           <a href="#roster" className="hover:text-brand-crimson">Roster</a>
           <a href="#about" className="hover:text-brand-crimson">About</a>
           <a href="#staff" className="hover:text-brand-crimson">Staff</a>
+          <Link to="/wpsl" className="hover:text-brand-crimson">WPSL</Link>
         </div>
         <a
           href="mailto:mtorguson@davislegacysoccer.org?subject=2026%20Player%20Interest"
